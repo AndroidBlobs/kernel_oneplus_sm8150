@@ -10,20 +10,22 @@
  * GNU General Public License for more details.
  */
 
-#ifndef _ATL_QCOM_H_
-#define _ATL_QCOM_H_
+#ifndef _ATL_OF_H_
+#define _ATL_OF_H_
 
-#ifdef CONFIG_AQFWD_QCOM
+#include <linux/device.h>
 
-int atl_qcom_parse_dt(struct device *dev);
+#ifdef CONFIG_OF
+
+int atl_parse_dt(struct device *dev);
 
 #else
 
-static inline int atl_qcom_parse_dt(struct device *dev)
+static inline int atl_parse_dt(struct device *dev)
 {
 	return 0;
 }
 
-#endif // CONFIG_AQFWD_QCOM
+#endif // CONFIG_OF
 
-#endif // _ATL_QCOM_H_
+#endif // _ATL_OF_H_
